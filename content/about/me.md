@@ -1,11 +1,11 @@
 ---
 title: "About me"
 date: 2017-10-15
-# tags: ["go", "golang", "hugo", "themes"]
+# tags: []
 # draft: false
 ---
 
-## Introduction
+### Introduction
 
 Hi!
 
@@ -13,7 +13,7 @@ My name is **George Traskas** and I live in Thessaloniki, Greece. I went to [Ari
 
 Statistics and data analysis in chemistry is a growing concern these days. Thus, a few months before, I started learning data analysis at [Udacity](https://www.udacity.com) and I have completed successfully the Data Analyst Nanodegree Program. This website is mainly focused on data science and contains a collection of my work in machine learning, data wrangling, exploratory data analysis, and statistics.
 
-## Skills
+### Skills
 
 * Data Analysis
 * Statistics
@@ -31,7 +31,7 @@ Statistics and data analysis in chemistry is a growing concern these days. Thus,
 * Clustering
 * Dimensionality Reduction
 
-## Ask me
+### Ask me
 
 #### Describe a time you experienced a challenge while building a product/project and how you overcame it.
 

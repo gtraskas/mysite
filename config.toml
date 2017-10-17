@@ -1,21 +1,21 @@
 baseURL = "http://gtraskas.github.io/"
 languageCode = "en-us"
-title = "Data Scientist"
+title = "A data science blog"
 theme = "minimal"
 # disqusShortname = "username" # delete this to disable disqus comments
 # googleAnalytics = ""
 
 [params]
     author = "George Traskas"
-    description = "In my free time I take an interest in working on statistics, machine learning, and data."
+    description = "Hi, I am George Traskas. In my free time I take an interest in working on statistics, machine learning, and data."
     githubUsername = "gtraskas"
-    accent = "#00628B"
+    accent = "#336699"
     showBorder = true
-    backgroundColor = "#E6E6DC"
+    backgroundColor = "white"
     font = "Raleway" # should match the name on Google Fonts!
     highlight = true
     highlightStyle = "solarized-dark"
-    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
+    highlightLanguages = ["python", "R"]
 
 [[menu.main]]
     url = "/"
@@ -31,6 +31,11 @@ theme = "minimal"
     url = "/project/"
     name = "Projects"
     weight = 3
+
+[[menu.main]]
+    url = "/post/"
+    name = "Posts"
+    weight = 4
 
 # Social icons to be shown on the right-hand side of the navigation bar
 # The "name" field should match the name of the icon to be used
