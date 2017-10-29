@@ -53,7 +53,7 @@ plt.show()
 ```
 
 
-![png](/static/breast_cancer/output_10_0.png "Correlation matrix")
+![png](/breast_cancer/output_10_0.png "Correlation matrix")
 
 
 It seems that:
@@ -77,7 +77,7 @@ sns.heatmap(df_corr, cmap="Blues", annot=True)
 plt.show()
 ```
 
-![png](/static/breast_cancer/output_12_0.png "Heatmap")
+![png](/breast_cancer/output_12_0.png "Heatmap")
 
 
 * As it was expected there are very strong correlations between radius, perimeter and area.
@@ -318,11 +318,11 @@ plot_pca()
 ```
 
 
-![png](/static/breast_cancer/output_27_0.png "Unscaled Data - Feature Contribution")
+![png](/breast_cancer/output_27_0.png "Unscaled Data - Feature Contribution")
 
 
 
-![png](/static/breast_cancer/output_27_1.png "Unscaled Data - Cumulative Explained Variance")
+![png](/breast_cancer/output_27_1.png "Unscaled Data - Cumulative Explained Variance")
 
 
 Applying PCA on the unscaled dataset, it seems that more than 99% of the variance is explained by only one component, which is too good to be true. The feature contribution plot depicts that principal components 3 (`area_mean`) and 23 (`area_worst`) dominate the PCA. This is explained by the large variance of `area_mean` and `area_worst` (see std values of the Data Exploration section). To avoid this, feature scaling prior to PCA is highly recommended.
@@ -336,11 +336,11 @@ plot_pca()
 ```
 
 
-![png](/static/breast_cancer/output_29_0.png "Scaled Data - Feature Contribution")
+![png](/breast_cancer/output_29_0.png "Scaled Data - Feature Contribution")
 
 
 
-![png](/static/breast_cancer/output_29_1.png "Scaled Data - Cumulative Explained Variance")
+![png](/breast_cancer/output_29_1.png "Scaled Data - Cumulative Explained Variance")
 
 
 After applying scaling before PCA, 5 principal components are required to explain more than 90% of the variance. This shows a better handle on the variation within the dataset.
