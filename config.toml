@@ -14,8 +14,8 @@ theme = "minimal"
     backgroundColor = "white"
     font = "Raleway" # should match the name on Google Fonts!
     highlight = true
-    highlightStyle = "Solarized Light"
-    highlightLanguages = ["python", "R"]
+    highlightStyle = "github"
+    highlightLanguages = ["python", "R", "Markdown"]
 
 [[menu.main]]
     url = "/"
