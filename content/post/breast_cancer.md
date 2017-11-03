@@ -6,6 +6,7 @@ draft: false
 ---
 
 In this study, advanced machine learning methods will be utilized to build and test the performance of a selected algorithm for breast cancer diagnosis.
+
 ## Dataset Description
 The Breast Cancer Wisconsin (Diagnostic) DataSet, obtained from Kaggle, contains features computed from a digitized image of a fine needle aspirate (FNA) of a breast mass and describe	characteristics of the cell nuclei present in the image.
 
@@ -18,7 +19,6 @@ The Breast Cancer Wisconsin (Diagnostic) DataSet, obtained from Kaggle, contains
     * ID number
     * Diagnosis (M = malignant, B = benign)
     * Ten real-valued features are computed for each cell nucleus:
-
         * radius (mean of distances from center to points on the perimeter)
         * texture (standard deviation of gray-scale values)
         * perimeter
@@ -29,18 +29,517 @@ The Breast Cancer Wisconsin (Diagnostic) DataSet, obtained from Kaggle, contains
         * concave points (number of concave portions of the contour)
         * symmetry 
         * fractal dimension ("coastline approximation" - 1)
-        
+
 
     The mean, standard error, and "worst" or largest (mean of the three largest values) of these features were computed for each image, resulting in 30 features. For instance, field 3 is Mean Radius, field 13 is Radius SE, field 23 is Worst Radius.
 
 
+## Data Loading and Cleaning
+
+<details>
+  <summary>Show/Hide code</summary>
+```python
+import pandas as pd
+from IPython.display import HTML
+
+df = pd.read_csv("breast_cancer.csv")
+HTML(df.to_html())
+print(df.shape)
+print(df.dtypes)
+df.head(n=3)
+```
+</details>
+
+    (569, 33)
+    id                           int64
+    diagnosis                   object
+    radius_mean                float64
+    texture_mean               float64
+    perimeter_mean             float64
+    area_mean                  float64
+    smoothness_mean            float64
+    compactness_mean           float64
+    concavity_mean             float64
+    concave points_mean        float64
+    symmetry_mean              float64
+    fractal_dimension_mean     float64
+    radius_se                  float64
+    texture_se                 float64
+    perimeter_se               float64
+    area_se                    float64
+    smoothness_se              float64
+    compactness_se             float64
+    concavity_se               float64
+    concave points_se          float64
+    symmetry_se                float64
+    fractal_dimension_se       float64
+    radius_worst               float64
+    texture_worst              float64
+    perimeter_worst            float64
+    area_worst                 float64
+    smoothness_worst           float64
+    compactness_worst          float64
+    concavity_worst            float64
+    concave points_worst       float64
+    symmetry_worst             float64
+    fractal_dimension_worst    float64
+    Unnamed: 32                float64
+    dtype: object
+
+
+<details>
+  <summary>Show/Hide Table</summary>
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>diagnosis</th>
+      <th>radius_mean</th>
+      <th>texture_mean</th>
+      <th>perimeter_mean</th>
+      <th>area_mean</th>
+      <th>smoothness_mean</th>
+      <th>compactness_mean</th>
+      <th>concavity_mean</th>
+      <th>concave points_mean</th>
+      <th>...</th>
+      <th>texture_worst</th>
+      <th>perimeter_worst</th>
+      <th>area_worst</th>
+      <th>smoothness_worst</th>
+      <th>compactness_worst</th>
+      <th>concavity_worst</th>
+      <th>concave points_worst</th>
+      <th>symmetry_worst</th>
+      <th>fractal_dimension_worst</th>
+      <th>Unnamed: 32</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>842302</td>
+      <td>M</td>
+      <td>17.99</td>
+      <td>10.38</td>
+      <td>122.8</td>
+      <td>1001.0</td>
+      <td>0.11840</td>
+      <td>0.27760</td>
+      <td>0.3001</td>
+      <td>0.14710</td>
+      <td>...</td>
+      <td>17.33</td>
+      <td>184.6</td>
+      <td>2019.0</td>
+      <td>0.1622</td>
+      <td>0.6656</td>
+      <td>0.7119</td>
+      <td>0.2654</td>
+      <td>0.4601</td>
+      <td>0.11890</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>842517</td>
+      <td>M</td>
+      <td>20.57</td>
+      <td>17.77</td>
+      <td>132.9</td>
+      <td>1326.0</td>
+      <td>0.08474</td>
+      <td>0.07864</td>
+      <td>0.0869</td>
+      <td>0.07017</td>
+      <td>...</td>
+      <td>23.41</td>
+      <td>158.8</td>
+      <td>1956.0</td>
+      <td>0.1238</td>
+      <td>0.1866</td>
+      <td>0.2416</td>
+      <td>0.1860</td>
+      <td>0.2750</td>
+      <td>0.08902</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>84300903</td>
+      <td>M</td>
+      <td>19.69</td>
+      <td>21.25</td>
+      <td>130.0</td>
+      <td>1203.0</td>
+      <td>0.10960</td>
+      <td>0.15990</td>
+      <td>0.1974</td>
+      <td>0.12790</td>
+      <td>...</td>
+      <td>25.53</td>
+      <td>152.5</td>
+      <td>1709.0</td>
+      <td>0.1444</td>
+      <td>0.4245</td>
+      <td>0.4504</td>
+      <td>0.2430</td>
+      <td>0.3613</td>
+      <td>0.08758</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>3 rows × 33 columns</p>
+</div>
+</details>
+
+The `id` and `Unnamed: 32` columns should be removed, since they are unnecessary. The dataset will be also examined for missing values, duplicated entries and unique values of 'diagnosis' column.
+
+<details>
+  <summary>Show/Hide code</summary>
+```python
+# Remove unnecessary columns
+df.drop(['id', 'Unnamed: 32'], axis=1, inplace=True)
+
+# Find missing values
+print('Missing values:\n{}'.format(df.isnull().sum()))
+
+# Find duplicated records
+print('\nNumber of duplicated records: {}'.format(df.duplicated().sum()))
+
+# Find the unique values of 'diagnosis'.
+print('\nUnique values of "diagnosis": {}'.format(df['diagnosis'].unique()))
+```
+</details>
+
+    Missing values:
+    diagnosis                  0
+    radius_mean                0
+    texture_mean               0
+    perimeter_mean             0
+    area_mean                  0
+    smoothness_mean            0
+    compactness_mean           0
+    concavity_mean             0
+    concave points_mean        0
+    symmetry_mean              0
+    fractal_dimension_mean     0
+    radius_se                  0
+    texture_se                 0
+    perimeter_se               0
+    area_se                    0
+    smoothness_se              0
+    compactness_se             0
+    concavity_se               0
+    concave points_se          0
+    symmetry_se                0
+    fractal_dimension_se       0
+    radius_worst               0
+    texture_worst              0
+    perimeter_worst            0
+    area_worst                 0
+    smoothness_worst           0
+    compactness_worst          0
+    concavity_worst            0
+    concave points_worst       0
+    symmetry_worst             0
+    fractal_dimension_worst    0
+    dtype: int64
+    
+    Number of duplicated records: 0
+    
+    Unique values of "diagnosis": ['M' 'B']
+
+
+There are no missing values or duplicated records. Next the `diagnosis` distribution is checked.
+
+<details>
+  <summary>Show/Hide code</summary>
+```python
+total = df['diagnosis'].count()
+malignant = df[df['diagnosis'] == "M"]['diagnosis'].count()
+print("Malignant: ", malignant)
+print("Benign: ", total - malignant)
+```
+</details>
+
+    Malignant:  212
+    Benign:  357
+
+
 ## Data Exploration
 
-For data cleaning and the complete analysis visit [here](https://github.com/gtraskas/breast_cancer_prediction/blob/master/breast_cancer.ipynb).
+<details>
+  <summary>Show/Hide code</summary>
+```python
+# Generate statistics
+df.describe()
+```
+</details>
+
+<details>
+  <summary>Show/Hide Table</summary>
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>radius_mean</th>
+      <th>texture_mean</th>
+      <th>perimeter_mean</th>
+      <th>area_mean</th>
+      <th>smoothness_mean</th>
+      <th>compactness_mean</th>
+      <th>concavity_mean</th>
+      <th>concave points_mean</th>
+      <th>symmetry_mean</th>
+      <th>fractal_dimension_mean</th>
+      <th>...</th>
+      <th>radius_worst</th>
+      <th>texture_worst</th>
+      <th>perimeter_worst</th>
+      <th>area_worst</th>
+      <th>smoothness_worst</th>
+      <th>compactness_worst</th>
+      <th>concavity_worst</th>
+      <th>concave points_worst</th>
+      <th>symmetry_worst</th>
+      <th>fractal_dimension_worst</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>...</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+      <td>569.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>14.127292</td>
+      <td>19.289649</td>
+      <td>91.969033</td>
+      <td>654.889104</td>
+      <td>0.096360</td>
+      <td>0.104341</td>
+      <td>0.088799</td>
+      <td>0.048919</td>
+      <td>0.181162</td>
+      <td>0.062798</td>
+      <td>...</td>
+      <td>16.269190</td>
+      <td>25.677223</td>
+      <td>107.261213</td>
+      <td>880.583128</td>
+      <td>0.132369</td>
+      <td>0.254265</td>
+      <td>0.272188</td>
+      <td>0.114606</td>
+      <td>0.290076</td>
+      <td>0.083946</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.524049</td>
+      <td>4.301036</td>
+      <td>24.298981</td>
+      <td>351.914129</td>
+      <td>0.014064</td>
+      <td>0.052813</td>
+      <td>0.079720</td>
+      <td>0.038803</td>
+      <td>0.027414</td>
+      <td>0.007060</td>
+      <td>...</td>
+      <td>4.833242</td>
+      <td>6.146258</td>
+      <td>33.602542</td>
+      <td>569.356993</td>
+      <td>0.022832</td>
+      <td>0.157336</td>
+      <td>0.208624</td>
+      <td>0.065732</td>
+      <td>0.061867</td>
+      <td>0.018061</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>6.981000</td>
+      <td>9.710000</td>
+      <td>43.790000</td>
+      <td>143.500000</td>
+      <td>0.052630</td>
+      <td>0.019380</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.106000</td>
+      <td>0.049960</td>
+      <td>...</td>
+      <td>7.930000</td>
+      <td>12.020000</td>
+      <td>50.410000</td>
+      <td>185.200000</td>
+      <td>0.071170</td>
+      <td>0.027290</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.156500</td>
+      <td>0.055040</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>11.700000</td>
+      <td>16.170000</td>
+      <td>75.170000</td>
+      <td>420.300000</td>
+      <td>0.086370</td>
+      <td>0.064920</td>
+      <td>0.029560</td>
+      <td>0.020310</td>
+      <td>0.161900</td>
+      <td>0.057700</td>
+      <td>...</td>
+      <td>13.010000</td>
+      <td>21.080000</td>
+      <td>84.110000</td>
+      <td>515.300000</td>
+      <td>0.116600</td>
+      <td>0.147200</td>
+      <td>0.114500</td>
+      <td>0.064930</td>
+      <td>0.250400</td>
+      <td>0.071460</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>13.370000</td>
+      <td>18.840000</td>
+      <td>86.240000</td>
+      <td>551.100000</td>
+      <td>0.095870</td>
+      <td>0.092630</td>
+      <td>0.061540</td>
+      <td>0.033500</td>
+      <td>0.179200</td>
+      <td>0.061540</td>
+      <td>...</td>
+      <td>14.970000</td>
+      <td>25.410000</td>
+      <td>97.660000</td>
+      <td>686.500000</td>
+      <td>0.131300</td>
+      <td>0.211900</td>
+      <td>0.226700</td>
+      <td>0.099930</td>
+      <td>0.282200</td>
+      <td>0.080040</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>15.780000</td>
+      <td>21.800000</td>
+      <td>104.100000</td>
+      <td>782.700000</td>
+      <td>0.105300</td>
+      <td>0.130400</td>
+      <td>0.130700</td>
+      <td>0.074000</td>
+      <td>0.195700</td>
+      <td>0.066120</td>
+      <td>...</td>
+      <td>18.790000</td>
+      <td>29.720000</td>
+      <td>125.400000</td>
+      <td>1084.000000</td>
+      <td>0.146000</td>
+      <td>0.339100</td>
+      <td>0.382900</td>
+      <td>0.161400</td>
+      <td>0.317900</td>
+      <td>0.092080</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>28.110000</td>
+      <td>39.280000</td>
+      <td>188.500000</td>
+      <td>2501.000000</td>
+      <td>0.163400</td>
+      <td>0.345400</td>
+      <td>0.426800</td>
+      <td>0.201200</td>
+      <td>0.304000</td>
+      <td>0.097440</td>
+      <td>...</td>
+      <td>36.040000</td>
+      <td>49.540000</td>
+      <td>251.200000</td>
+      <td>4254.000000</td>
+      <td>0.222600</td>
+      <td>1.058000</td>
+      <td>1.252000</td>
+      <td>0.291000</td>
+      <td>0.663800</td>
+      <td>0.207500</td>
+    </tr>
+  </tbody>
+</table>
+<p>8 rows × 30 columns</p>
+</div>
+</details>
+
 
 Plot pairwise relationships to check the correlations between the mean features.
 
-
+<details>
+  <summary>Show/Hide code</summary>
 ```python
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -51,7 +550,7 @@ g = g.map_diag(plt.hist, edgecolor="w")
 g = g.map_offdiag(plt.scatter, edgecolor="w", s=40)
 plt.show()
 ```
-
+</details>
 
 ![png](/breast_cancer/output_10_0.png "Correlation matrix")
 
@@ -69,13 +568,15 @@ It seems that:
     * concavity
     * concave points
 
-
+<details>
+  <summary>Show/Hide code</summary>
 ```python
 df_corr = df.iloc[:, 1:11].corr()
 plt.figure(figsize=(8,8))
 sns.heatmap(df_corr, cmap="Blues", annot=True)
 plt.show()
 ```
+</details>
 
 ![png](/breast_cancer/output_12_0.png "Heatmap")
 
@@ -97,7 +598,8 @@ df['diagnosis'] = df['diagnosis'].map({'M':1,'B':0})
 ### Split Data to Train/Test Sets
 Create train/test sets using the `train_test_split` function. The `test_size=0.3` inside the function indicates the percentage of the data that should be held over for testing.
 
-
+<details>
+  <summary>Show/Hide code</summary>
 ```python
 from sklearn.model_selection import train_test_split
 
@@ -119,6 +621,7 @@ features_train, features_test, labels_train, labels_test = train_test_split(feat
 print(features_train.shape, labels_train.shape)
 print(features_test.shape, labels_test.shape)
 ```
+</details>
 
     (398, 30) (398,)
     (171, 30) (171,)
@@ -132,7 +635,8 @@ Accuracy, i.e. the fraction of correct predictions is typically not enough infor
 * Recall or the ability of the classifier to find all the positive samples. The best value is 1 and the worst value is 0. In context to the study, recall shows how well our identifier can find the malignant cells. For example, a low recall score of 0.8 indicates that our identifier finds only 80% of all the real malignant cells in the prediction. The rest 20% of real malignant cells will not be found by the diagnosis based on this algorithm, something that is unacceptable.
 * F1 score, a weighted average of the precision and recall, where an F1 score reaches its best value at 1 and worst score at 0. The relative contribution of precision and recall to the F1 score are equal. The formula for the F1 score is: F1 = 2 x (precision x recall) / (precision + recall).
 
-
+<details>
+  <summary>Show/Hide code</summary>
 ```python
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report
@@ -167,11 +671,12 @@ def print_ml_results():
 
 print_ml_results()
 ```
+</details>
 
-    Training time: 0.001 s
-    Prediction time: 0.002 s
+    Training time: 0.002 s
+    Prediction time: 0.003 s
     
-    Report for the normal dataset without Cross Validation and PCA:
+    Report:
     
     Accuracy: 0.9590643274853801
     
@@ -191,7 +696,8 @@ print_ml_results()
 #### Remove Highly Correlated Features and Run Again
 Investigate if removing manually features with a correlation higher than 0.8, can benefit the algorithm performance, although later this will be handled automatically by dimensionality reduction.
 
-
+<details>
+  <summary>Show/Hide code</summary>
 ```python
 df_new = df[['diagnosis', 'radius_mean', 'texture_mean', 'smoothness_mean',
             'compactness_mean', 'symmetry_mean', 'fractal_dimension_mean',
@@ -209,18 +715,17 @@ features_new = array[:,1:]
 labels_new = array[:,0]
 
 # Create a train/test split using 30% test size.
-features_train, features_test, labels_train, labels_test = train_test_split(features,
-                                                                            labels,
-                                                                            test_size=0.3,
-                                                                            random_state=42)
+features_train, features_test, labels_train, labels_test = train_test_split(features_new, labels_new, \
+                                                                            test_size=0.3, random_state=42)
 
 print_ml_results()
 ```
+</details>
 
     Training time: 0.001 s
-    Prediction time: 0.003 s
+    Prediction time: 0.002 s
     
-    Report for the normal dataset without Cross Validation and PCA:
+    Report:
     
     Accuracy: 0.9005847953216374
     
@@ -251,7 +756,8 @@ A common good practice in machine learning is feature scaling, normalization, st
 
 Feature scaling was applied here, since it is useful for algorithms that weigh inputs like regression and neural networks, as well as algorithms that use distance measures like K-NN.
 
-
+<details>
+  <summary>Show/Hide code</summary>
 ```python
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
@@ -263,6 +769,7 @@ features_scaled = scaler.fit_transform(features)
 print("Unscaled data\n", features_train)
 print("\nScaled data\n", features_scaled)
 ```
+</details>
 
     Unscaled data
      [[ 13.74  17.91   0.08 ...,   0.16   0.23   0.07]
@@ -291,7 +798,8 @@ Summarizing, the main purpose of principal component analysis is to:
 * reduce the dimensionnality of the data by removing the noise and redundancy in the data,
 * identify correlated variables
 
-
+<details>
+  <summary>Show/Hide code</summary>
 ```python
 from sklearn.decomposition import PCA
 
@@ -320,29 +828,27 @@ def plot_pca():
 
 plot_pca()
 ```
-
+</details>
 
 ![png](/breast_cancer/output_27_0.png "Unscaled Data - Feature Contribution")
-
-
 
 ![png](/breast_cancer/output_27_1.png "Unscaled Data - Cumulative Explained Variance")
 
 
 Applying PCA on the unscaled dataset, it seems that more than 99% of the variance is explained by only one component, which is too good to be true. The feature contribution plot depicts that principal components 3 (`area_mean`) and 23 (`area_worst`) dominate the PCA. This is explained by the large variance of `area_mean` and `area_worst` (see std values of the Data Exploration section). To avoid this, feature scaling prior to PCA is highly recommended.
 
-
+<details>
+  <summary>Show/Hide code</summary>
 ```python
 projected_scaled = pca.fit_transform(features_scaled)
 pca_inversed_data = pca.inverse_transform(np.eye(30))
 
 plot_pca()
 ```
+</details>
 
 
 ![png](/breast_cancer/output_29_0.png "Scaled Data - Feature Contribution")
-
-
 
 ![png](/breast_cancer/output_29_1.png "Scaled Data - Cumulative Explained Variance")
 
@@ -356,7 +862,8 @@ This preprocessing step is used to select the best features based on univariate 
 
 **Note:** First the dataset must be splitted into train and test sets, since performing feature selection on the whole dataset would lead to prediction bias.
 
-
+<details>
+  <summary>Show/Hide code</summary>
 ```python
 from sklearn.feature_selection import SelectKBest
 
@@ -369,6 +876,7 @@ ordered_feature_scores = sorted(feature_scores, key=lambda x: x[1], reverse=True
 for feature, score in ordered_feature_scores:
     print(feature, score)
 ```
+</details>
 
     diagnosis 409.324586491
     perimeter_se 330.705030068
@@ -396,7 +904,8 @@ Tuning the models is a tedious, time-consuming process and there can sometimes b
 
 The power of `GridSearchCV()` is that it multiplies out all the combinations of parameters and tries each one, making a k-fold cross-validated model for each combination. Then, we can ask for predictions and parameters from our `GridSearchCV()` object and it will automatically return to us the best set of predictions, as well as the best parameters.
 
-
+<details>
+  <summary>Show/Hide code</summary>
 ```python
 from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.pipeline import Pipeline, FeatureUnion
@@ -478,9 +987,9 @@ def get_best_estimator(n_splits):
 
 get_best_estimator(n_splits=20)
 ```
-
+</details>
     
-    Report for the scaled dataset with Cross Validation and Dimensionality Reduction:
+    Report:
     
                  precision    recall  f1-score   support
     
@@ -496,7 +1005,7 @@ get_best_estimator(n_splits=20)
       svd_solver='auto', tol=0.0, whiten=False), 'reduce_dim__n_components': 5}
     [[106   2]
      [  3  60]]
-    Time passed:  11.67 s
+    Time passed:  13.792 s
 
     Pipeline(memory=None,
          steps=[('reduce_dim', PCA(copy=True, iterated_power=7, n_components=5, random_state=None,
@@ -511,7 +1020,8 @@ Often it is beneficial to combine several methods to obtain good performance. `F
 * consist of heterogeneous data types (e.g. raster images and text captions),
 * are stored in a Pandas DataFrame and different columns require different processing pipelines.
 
-
+<details>
+  <summary>Show/Hide code</summary>
 ```python
 # Build the estimator from PCA and univariate selection.
 combined_features = FeatureUnion([('pca', PCA()), ('univ_select', SelectKBest())])
@@ -536,9 +1046,9 @@ parameters = [
 
 get_best_estimator(20)
 ```
-
+</details>
     
-    Report for the scaled dataset with Cross Validation and Dimensionality Reduction:
+    Report:
     
                  precision    recall  f1-score   support
     
@@ -554,12 +1064,12 @@ get_best_estimator(20)
       svd_solver='auto', tol=0.0, whiten=False), 'features__pca__n_components': 5, 'features__univ_select__k': 3}
     [[107   1]
      [  4  59]]
-    Time passed:  35.545 s
+    Time passed:  39.809 s
 
     Pipeline(memory=None,
          steps=[('features', FeatureUnion(n_jobs=1,
            transformer_list=[('pca', PCA(copy=True, iterated_power=7, n_components=5, random_state=None,
-      svd_solver='auto', tol=0.0, whiten=False)), ('univ_select', SelectKBest(k=3, score_func=<function f_classif at 0x1a23efbc80>))],
+      svd_solver='auto', tol=0.0, whiten=False)), ('univ_select', SelectKBest(k=3, score_func=<function f_classif at 0x1a26133b70>))],
            transformer_weights=None)), ('clf', KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
                metric_params=None, n_jobs=1, n_neighbors=6, p=2,
                weights='uniform'))])
