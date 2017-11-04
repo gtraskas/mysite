@@ -11,7 +11,7 @@ Hi!
 
 My name is **George Traskas** and I live in Thessaloniki, Greece. I went to [Aristotle University of Thessaloniki](https://www.auth.gr/en) and graduated with a BSc in Chemistry and a MSc in Chemical Technology. During my MSc studies and for a couple of years I was involved in several water treatment research projects. I am an experienced chemist with a strong background in analytical chemistry and I work at [CPERI/CERTH](http://www.cperi.certh.gr/index.php?lang=en) for the last 10 years.
 
-Statistics and data analysis in chemistry is a growing concern these days. Thus, a few months ago, I have started learning data analysis at [Udacity](https://www.udacity.com) and completed successfully the Data Analyst Nanodegree Program. This web site is mainly focused on data science and contains a collection of my work in machine learning, data wrangling, exploratory data analysis, and statistics.
+Statistics and data analysis in chemistry is a growing concern these days. Thus, a few months ago, I started learning data analysis at [Udacity](https://www.udacity.com) and completed successfully the Data Analyst Nanodegree Program. This web site is mainly focused on data science and contains a collection of my work in machine learning, data wrangling, exploratory data analysis, and statistics.
 
 ### Skills
 
