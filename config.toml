@@ -57,7 +57,7 @@ disqusShortname = "gtraskas" # delete this to disable disqus comments
 #    weight = 3
 
 [[menu.icon]]
-    url = "http://gr.linkedin.com/in/georgiostraskas"
+    url = "https://www.linkedin.com/in/georgios-traskas"
     name = "linkedin"
     weight = 4
 
