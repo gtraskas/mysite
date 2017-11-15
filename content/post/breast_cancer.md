@@ -1079,6 +1079,7 @@ get_best_estimator(20)
 ### Conclusions
 
 In this study, K-NN algorithm was applied for the diagnosis of the Breast Cancer Wisconsin DataSet. It was found that precision and recall scores can be considerably improved applying the following steps:
+
 * Feature Scaling
 * Dimensionality Reduction
 * Cross Validation
