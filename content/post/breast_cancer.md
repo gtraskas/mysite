@@ -595,11 +595,15 @@ df['diagnosis'] = df['diagnosis'].map({'M':1,'B':0})
 ```
 
 ## Machine Learning
+
 ### Split Data to Train/Test Sets
+
 Create train/test sets using the `train_test_split` function. The `test_size=0.3` inside the function indicates the percentage of the data that should be held over for testing.
+
 
 <details>
   <summary>Show/Hide code</summary>
+
 ```python
 from sklearn.model_selection import train_test_split
 
@@ -628,15 +632,22 @@ print(features_test.shape, labels_test.shape)
 
 
 ### K Nearest Neighbors (K-NN) Classifier
+
 K-NN was chosen amongst other algorithms (e.g. Support Vector Machines, Decision Trees and Naive Bayes), because it is quite fast and produces acceptable results. The speed of K-NN can be explained by the fact that this algorithm is a lazy learner and does not do much during training process unlike other classifiers that build the models. The performance of K-NN will be examined tuning the algorithm and applying various preprocessing steps.
+
 #### Evaluation of the algorithm
+
 Accuracy, i.e. the fraction of correct predictions is typically not enough information to evaluate a model. Although it is a starting point, it can lead to invalid decisions. Models with high accuracy may have inadequate precision or recall scores. For this reason the evaluation metrics that were also assessed are:
+
 * Precision or the ability of the classifier not to label as positive a sample that is negative. The best value is 1 and the worst value is 0. In our study case, precision is when the algorithm guesses that a cell is malignant and actually measures how certain we are that this cell is a true malignant. For example, a precision of 0.9 means that if the model predicts 100 malignant cells, the 90 of them are malignant and the rest 10 are benign (false).
+
 * Recall or the ability of the classifier to find all the positive samples. The best value is 1 and the worst value is 0. In context to the study, recall shows how well our identifier can find the malignant cells. For example, a low recall score of 0.8 indicates that our identifier finds only 80% of all the real malignant cells in the prediction. The rest 20% of real malignant cells will not be found by the diagnosis based on this algorithm, something that is unacceptable.
+
 * F1 score, a weighted average of the precision and recall, where an F1 score reaches its best value at 1 and worst score at 0. The relative contribution of precision and recall to the F1 score are equal. The formula for the F1 score is: F1 = 2 x (precision x recall) / (precision + recall).
 
 <details>
   <summary>Show/Hide code</summary>
+
 ```python
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import classification_report
@@ -694,10 +705,12 @@ print_ml_results()
 * The algorithm will be tuned to achieve an improved performance, especially a better recall score for the malignant class, since 90% can be considered a low recall score in this case.
 
 #### Remove Highly Correlated Features and Run Again
+
 Investigate if removing manually features with a correlation higher than 0.8, can benefit the algorithm performance, although later this will be handled automatically by dimensionality reduction.
 
 <details>
   <summary>Show/Hide code</summary>
+
 ```python
 df_new = df[['diagnosis', 'radius_mean', 'texture_mean', 'smoothness_mean',
             'compactness_mean', 'symmetry_mean', 'fractal_dimension_mean',
@@ -743,6 +756,7 @@ print_ml_results()
 There is a significant decrease in algorithm's accuracy and recall mostly for the malignant class. It's difficult to select manually the best features especially for datasets with many features correlated. Sometimes, ambiguity can occur when three or more variables are correlated. For example, if feature 1 is correlated with feature 2, while feature 2 is correlated with feature 3 but not feature 1, which one is better to remove? To resolve this automatically, dimensionality reduction methods are used such as Principal Component Analysis.
 
 ### Cross Validation
+
 Train/test split has a lurking danger if the split isn't random and when one subset of our data has only observations from one class, i.e. our data are imbalanced. This will result in overfitting. To avoid this, cross validation is applied. There are several cross validation methods such as K-Fold and Stratified K-Fold.
 
 In K-Fold cross-validation, the original sample is randomly partitioned into k equal sized subsamples. Of the k subsamples, a single subsample is retained as the validation data for testing the model, and the remaining k-1 subsamples are used as training data. The cross-validation process is then repeated k times (the folds), with each of the k subsamples used exactly once as the validation data. The k results from the folds can then be averaged to produce a single estimation. The advantage of this method over repeated random sub-sampling is the increased accuracy because all observations are used for both training and validation, and each observation is used for validation exactly once.
@@ -750,14 +764,18 @@ In K-Fold cross-validation, the original sample is randomly partitioned into k e
 If the original data comes in some sort of sorted shape, a shuffle of the order of the data points is necessary before splitting them up into folds. This can be done in `KFold()`, setting the `shuffle` parameter to `True`. If there are concerns about class imbalance, then the `StratifiedKFold()` class should be used instead. Where `KFold()` assigns points to folds without attention to output class, `StratifiedKFold()` assigns data points to folds so that each fold has approximately the same number of data points of each output class. This is most useful for when we have imbalanced numbers of data points in the outcome classes (e.g. one is rare compared to the others). For this class as well, it can be used `shuffle=True` to shuffle the data points' order before splitting into folds.
 
 ### Scale Features
+
 A common good practice in machine learning is feature scaling, normalization, standardization or binarization of the predictor variables. The main purposes of these methods are two:
+
 1. Create comparable features in terms of units, e.g. if there are values in different units, then, the scaled data will be the same.
+
 2. Create comparable features in terms of size, e.g. if two variables have vastly different ranges, the one with the larger range may dominate the predictive model, even though it may be less important to the target variable than the variable with the smaller range.
 
 Feature scaling was applied here, since it is useful for algorithms that weigh inputs like regression and neural networks, as well as algorithms that use distance measures like K-NN.
 
 <details>
   <summary>Show/Hide code</summary>
+
 ```python
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
@@ -791,15 +809,21 @@ print("\nScaled data\n", features_scaled)
 
 
 ### Principal Component Analysis (PCA)
+
 PCA is a preprocessing step, which decomposes a multivariate dataset in a set of successive orthogonal components that explain a maximum amount of the variance. It is used when we need to tackle datasets with a large number of features with different scales, some of which might be correlated. These correlations and the high dimension of the dataset bring a redudancy in the information. Applying PCA, the original features are transformed to linear combinations of new independent variables, which reduce the complexity of the dataset and thus, the computational cost.
 
 Summarizing, the main purpose of principal component analysis is to:
+
+
 * identify hidden pattern in a data set,
+
 * reduce the dimensionnality of the data by removing the noise and redundancy in the data,
+
 * identify correlated variables
 
 <details>
   <summary>Show/Hide code</summary>
+
 ```python
 from sklearn.decomposition import PCA
 
@@ -839,6 +863,7 @@ Applying PCA on the unscaled dataset, it seems that more than 99% of the varianc
 
 <details>
   <summary>Show/Hide code</summary>
+
 ```python
 projected_scaled = pca.fit_transform(features_scaled)
 pca_inversed_data = pca.inverse_transform(np.eye(30))
@@ -856,14 +881,19 @@ plot_pca()
 After applying scaling before PCA, 5 principal components are required to explain more than 90% of the variance. This shows a better handle on the variation within the dataset.
 
 ### Univariate Feature Selection
+
 This preprocessing step is used to select the best features based on univariate statistical tests. Most common methods are:
+
+
 * `SelectKBest()`, which removes all but the k highest scoring features, and
+
 * `SelectPercentile()`, which removes all but a user-specified highest scoring percentage of features.
 
 **Note:** First the dataset must be splitted into train and test sets, since performing feature selection on the whole dataset would lead to prediction bias.
 
 <details>
   <summary>Show/Hide code</summary>
+
 ```python
 from sklearn.feature_selection import SelectKBest
 
@@ -897,7 +927,9 @@ for feature, score in ordered_feature_scores:
 
 
 ### Tune the algorithm
+
 #### Putting it all together with GridSearchCV and Pipeline
+
 Algorithm tuning is a process in which we optimize the parameters that impact the model in order to enable the algorithm to perform with an improved performance. If we don't tune the algorithms well, performance will be poor with low accuracy, precision or recall. Most of the machine learning algorithms contain a set of parameters (hyperparameters), which should be set up adequately to perform the best. While all of the algorithms attempt to set reasonable default hyperparameters, they can often fail to provide optimal results for many real world datasets in practice. To find an optimized combination of hyperparameters, a metric is chosen to measure the algorithm's performance on an independent data set and hyperparameters that maximize this measure are adopted.
 
 Tuning the models is a tedious, time-consuming process and there can sometimes be interactions between the choices we make in one step and the optimal value for a downstream step. Hopefully, there are two simple and easy tuning strategies, grid search and random search. Scikit-learn provides these two methods for algorithm parameter tuning. `GridSearchCV()` allows us to construct a grid of all the combinations of parameters passing one classifier to pipeline each time, tries each combination, and then reports back the best combination. So, instead of trying numerous values for each tuning parameter, `GridSearchCV()` will apply all the combinations of parameters - not just vary them independently - avoiding local optima.
@@ -906,6 +938,7 @@ The power of `GridSearchCV()` is that it multiplies out all the combinations of 
 
 <details>
   <summary>Show/Hide code</summary>
+
 ```python
 from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.pipeline import Pipeline, FeatureUnion
@@ -1016,12 +1049,16 @@ get_best_estimator(n_splits=20)
 
 
 #### Combine PCA and Feature Selection with FeatureUnion
+
 Often it is beneficial to combine several methods to obtain good performance. `FeatureUnion()` will be used to combine features obtained by PCA and univariate selection, `SelectKBest()`. Combining features using this transformer has the advantage that it allows cross validation and grid searches over the whole process. Datasets that benefit from this can often:
+
 * consist of heterogeneous data types (e.g. raster images and text captions),
+
 * are stored in a Pandas DataFrame and different columns require different processing pipelines.
 
 <details>
   <summary>Show/Hide code</summary>
+
 ```python
 # Build the estimator from PCA and univariate selection.
 combined_features = FeatureUnion([('pca', PCA()), ('univ_select', SelectKBest())])
@@ -1081,14 +1118,21 @@ get_best_estimator(20)
 In this study, K-NN algorithm was applied for the diagnosis of the Breast Cancer Wisconsin DataSet. It was found that precision and recall scores can be considerably improved applying the following steps:
 
 * Feature Scaling
+
 * Dimensionality Reduction
+
 * Cross Validation
+
 * Hyperparameter Optimization
 
 For better results more data are required and other algorithms should be used.
 
 ### References
+
 1. http://scikit-learn.org/stable/index.html
+
 2. https://jakevdp.github.io/PythonDataScienceHandbook/
+
 3. http://jotterbach.github.io/2016/03/24/Principal_Component_Analysis/
+
 3. https://medium.com/towards-data-science/train-test-split-and-cross-validation-in-python-80b61beca4b6
