@@ -81,7 +81,7 @@ def plotData(X, y, title):
         title: str
     """
     # Find indices of positive and negative examples.
-    y = y.flatten()
+    y = y.ravel()
     pos = y==1
     neg = y==0
 
@@ -150,7 +150,7 @@ def svmTrain(X, y, C, kernelFunction, tol, max_passes, sigma=None):
     """
     # Change the shape of y to (# training examples, ),
     # a 1d array is expected. 
-    y = y.flatten()
+    y = y.ravel()
     
     if kernelFunction == 'gaussian':
         clf = svm.SVC(C=C, kernel='precomputed', tol=tol, max_iter=max_passes)
@@ -177,8 +177,8 @@ def gaussianKernel(X1, X2, sigma):
     Gram = np.zeros((X1.shape[0], X2.shape[0]))
     for i, x1 in enumerate(X1):
         for j, x2 in enumerate(X2):
-            x1 = x1.flatten()
-            x2 = x2.flatten()
+            x1 = x1.ravel()
+            x2 = x2.ravel()
             Gram[i, j] = np.exp(-np.sum(np.square(x1 - x2)) / (2 * (sigma**2)))
     return Gram
 
@@ -195,8 +195,8 @@ def gaussianKernel(X1, X2, sigma):
 #         sim: float
 #     """
 #     # Ensure that x1 and x2 are column vectors
-#     x1 = x1.flatten()
-#     x2 = x2.flatten()
+#     x1 = x1.ravel()
+#     x2 = x2.ravel()
     
 #     sim = np.exp(-np.sum(np.square(x1 - x2)) / (2 * (sigma**2)))
 #     return sim
@@ -228,10 +228,10 @@ def visualizeBoundaryLinear(X, y, model, title):
 
 # Change the C value below and see how the decision boundary varies.
 C = 1
-model = svmTrain(X, y, C, 'linear', 1e-3, 500)
+model = svmTrain(X, y, C, 'linear', 1e-3, -1)
 visualizeBoundaryLinear(X, y, model, "Figure 2: SVM Decision Boundary with C = 1")
 C = 100
-model = svmTrain(X, y, C, 'linear', 1e-3, 2000)
+model = svmTrain(X, y, C, 'linear', 1e-3, -1)
 visualizeBoundaryLinear(X, y, model, "Figure 3: SVM Decision Boundary with C = 100")
 
 print("Evaluating the Gaussian Kernel ...")
@@ -375,7 +375,7 @@ def dataset3Params(X, y, Xval, yval):
     for C in [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30]:
         for sigma in [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30]:
             # Train the model on X and y.
-            model = svmTrain(X, y, C, 'gaussian', 1e-5, 5000, sigma)
+            model = svmTrain(X, y, C, 'gaussian', 1e-5, -1, sigma)
             # Perform classification on samples in Xval.
             # For precomputed kernels, the expected shape of
             # X is [n_samples_validation, n_samples_train]
@@ -389,10 +389,10 @@ def dataset3Params(X, y, Xval, yval):
 C, sigma = dataset3Params(X, y, Xval, yval)
 
 # Train the SVM classifier with the optimal values of C and sigma.
-model = svmTrain(X, y, C, 'gaussian', 1e-5, 5000, sigma=sigma)
+model = svmTrain(X, y, C, 'gaussian', 1e-5, -1, sigma=sigma)
 
 # Plot the data and the decision boundary.
-visualizeBoundary(X, y, model, "Figure 7: SVM (Gaussian Kernel) Decision Boundary")
+visualizeBoundary(X, y, model, sigma, "Figure 7: SVM (Gaussian Kernel) Decision Boundary")
 ```
 
 
