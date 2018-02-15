@@ -9,27 +9,35 @@ date: 2017-10-15
 
 Hi!
 
-My name is **George Traskas** and I live in Thessaloniki, Greece. I went to [Aristotle University of Thessaloniki](https://www.auth.gr/en) and graduated with a BSc in Chemistry and a MSc in Chemical Technology. During my MSc studies and for a couple of years I was involved in several water treatment research projects. I am an experienced chemist with a strong background in analytical chemistry and I work at [CPERI/CERTH](http://www.cperi.certh.gr/index.php?lang=en) for the last 10 years.
+My name is **George Traskas** and I am from Greece. I went to [Aristotle University of Thessaloniki](https://www.auth.gr/en) and graduated with a BSc in Chemistry and a MSc in Chemical Technology. During my MSc studies and for a couple of years I was involved in several water treatment research projects. I am an experienced chemist with a strong background in analytical chemistry and I work at [CPERI/CERTH](http://www.cperi.certh.gr/index.php?lang=en) for the last 10 years.
 
-Statistics and data analysis in chemistry is a growing concern these days. Thus, a few months ago, I started learning data analysis at [Udacity](https://www.udacity.com) and completed successfully the Data Analyst Nanodegree Program. This web site is mainly focused on data science and contains a collection of my work in machine learning, data wrangling, exploratory data analysis, and statistics.
+Statistics and data analysis in chemistry is a growing concern these days. Thus, last year I started learning data analysis at [Udacity](https://www.udacity.com) and completed successfully the Data Analyst NanoDegree Program. This web site is mainly focused on data science and contains a collection of my work in machine learning, data wrangling, exploratory data analysis, and statistics.
 
-### Skills
+### My Skills
 
-* Data Analysis
-* Statistics
-* Machine Learning
-* Numpy
-* Pandas
+* Machine Learning - Regressions, SVM's, Decision Trees, Naive Bayes, Clustering, Neural Networks
+* Cross Validation and Model Evaluation
+* Learning Curves and Error Analysis
+* Feature Scaling and Normalization
+* Feature Selection and Dimensionality Reduction (PCA)
+* Statistics - Descriptive, Inferential, Hypothesis Testing, Q-Tests, T-Tests
+* Data Mining/Wrangling - xls, csv, html, json, xml, SQL
+* Data Analysis - Univariate, Multivariate, Correlations, Visualizations
+
+### My Toolbox
+
 * Python
+* Scikit-Learn
+* NumPy
+* Pandas
+* Matplotlib
+* Jupyter Notebooks
 * R
 * SQL
 * Tableau
-* Scikit-Learn
-* Hypothesis Testing
-* Model Evaluation and Validation
-* Classification and Regression
-* Clustering
-* Dimensionality Reduction
+* LaTeX
+
+
 
 ### Ask me
 
