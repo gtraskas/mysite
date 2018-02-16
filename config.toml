@@ -7,7 +7,7 @@ disqusShortname = "gtraskas" # delete this to disable disqus comments
 
 [params]
     author = "George Traskas"
-    description = "Hi, my name is George and I am actively working on machine learning and data analysis subjects."
+    description = "covering mostly machine learning topics."
     githubUsername = "gtraskas"
     accent = "#0099CC"
     showBorder = true
