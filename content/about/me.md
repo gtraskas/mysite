@@ -8,16 +8,16 @@ date: 2024-03-20
 
 ### Company Details
 
-Name: **DATA SCIENCE SOLUTIONS SINGLE MEMBER P.C.**
-Address: Kleitou 17, 54642, Thessaloniki
-Tax Identification Number: 802429778
-Tax Office: Kalamarias
-General Commercial Register (G.E.MI.) Number: 176203504000
-Professional Chamber of Thessaloniki ID: 70415
-Administrator: Georgios Traskas
-Partners: Georgios Traskas
-Business Activity Code (KAD): 63111000
-Capital: € 500
+* Name: **DATA SCIENCE SOLUTIONS SINGLE MEMBER P.C.**
+* Address: Kleitou 17, 54642, Thessaloniki
+* Tax Identification Number: 802429778
+* Tax Office: Kalamarias
+* General Commercial Register (G.E.MI.) Number: 176203504000
+* Professional Chamber of Thessaloniki ID: 70415
+* Administrator: Georgios Traskas
+* Partners: Georgios Traskas
+* Business Activity Code (KAD): 63111000
+* Capital: € 500
 
 ### Introduction
 
