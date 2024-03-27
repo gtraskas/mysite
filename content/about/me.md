@@ -1,6 +1,5 @@
 ---
 title: "About"
-company: 
 date: 2024-03-20
 # tags: []
 # draft: false
