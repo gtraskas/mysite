@@ -1,13 +1,13 @@
 baseURL = "http://gtraskas.github.io/"
 languageCode = "en-us"
-title = "A data science blog"
+title = "Data Science Solutions Single Member P.C."
 theme = "minimal"
 disqusShortname = "gtraskas" # delete this to disable disqus comments
 # googleAnalytics = ""
 
 [params]
     author = "George Traskas"
-    description = "covering mostly machine learning topics."
+    description = "offering data analytics and A.I. solutions."
     githubUsername = "gtraskas"
     accent = "#0099CC"
     showBorder = true
