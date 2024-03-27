@@ -1,17 +1,29 @@
 ---
-title: "About me"
-date: 2017-10-15
+title: "About"
+company: 
+date: 2024-03-20
 # tags: []
 # draft: false
 ---
 
+### Company Details
+
+Name: **DATA SCIENCE SOLUTIONS SINGLE MEMBER P.C.**
+Address: Kleitou 17, 54642, Thessaloniki
+Tax Identification Number: 802429778
+Tax Office: Kalamarias
+General Commercial Register (G.E.MI.) Number: 176203504000
+Professional Chamber of Thessaloniki ID: 70415
+Administrator: Georgios Traskas
+Partners: Georgios Traskas
+Business Activity Code (KAD): 63111000
+Capital: € 500
+
 ### Introduction
 
-Hi!
+Greetings! I’m George, hailing from Greece. My educational journey led me to [Aristotle University of Thessaloniki](https://www.auth.gr/en), where I obtained a Bachelor’s degree in Chemistry and a Master’s degree in Chemical Technology. During my MSc studies and subsequent years, I actively participated in various water treatment research projects. With a solid foundation in analytical chemistry, I’ve dedicated the past 17 years to working at [CPERI/CERTH](http://www.cperi.certh.gr/index.php?lang=en).
 
-My name is **George Traskas** and I am from Greece. I went to [Aristotle University of Thessaloniki](https://www.auth.gr/en) and graduated with a BSc in Chemistry and a MSc in Chemical Technology. During my MSc studies and for a couple of years I was involved in several water treatment research projects. I am an experienced chemist with a strong background in analytical chemistry and I work at [CPERI/CERTH](http://www.cperi.certh.gr/index.php?lang=en) for the last 10 years.
-
-Statistics and data analysis in chemistry is a growing concern these days. Thus, last year I started learning data analysis at [Udacity](https://www.udacity.com) and completed successfully the Data Analyst NanoDegree Program. This web site is mainly focused on data science and contains a collection of my work in machine learning, data wrangling, exploratory data analysis, and statistics.
+Over the past five years, I’ve been actively involved in data science projects, emphasizing the significance of statistics and data analysis in the field of chemistry. My website showcases a collection of my work, spanning machine learning, data wrangling, exploratory data analysis, and statistical exploration.
 
 ### My Skills
 
