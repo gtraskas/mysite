@@ -15,7 +15,7 @@ date: 2024-03-20
 * Αριθμός Μητρώου Επαγγελματικού Επιμελητηρίου Θεσσαλονίκης / Professional Chamber of Thessaloniki ID: 70415
 * Διαχειριστής / Administrator: Γεώργιος Τράσκας του Ιωάννη / Georgios Traskas
 * Εταίροι / Partners: Γεώργιος Τράσκας του Ιωάννη / Georgios Traskas
-* Κωδικός Αριθμός Δραστηριότητας (ΚΑΔ) / Business Activity Code (KAD): 63111000, 63111300, 63111101, 63111102, 63111104
+* Κωδικός Αριθμός Δραστηριότητας (ΚΑΔ) / Business Activity Code: 63111000, 63111300, 63111101, 63111102, 63111104
 * Κεφάλαιο / Capital: € 500
 * Τηλ. / Tel.: +30 6934 69 44 57
 * Email: georgiost77@gmail.com
