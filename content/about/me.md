@@ -7,27 +7,27 @@ date: 2024-03-20
 
 ### Company Details
 
-| Name                             | DATA SCIENCE SOLUTIONS SINGLE MEMBER P.C.      |
-|----------------------------------|------------------------------------------------|
-| Address                          | Kleitou 17, 54642, Thessaloniki                |
-| Tax ID                           | 802429778                                      |
-| Tax Office                       | Kalamarias                                     |
-| General Commercial Register ID   | 176203504000                                   |
-| Prof. Chamber of Thessaloniki ID | 70415                                          |
-| Administrator                    | Georgios Traskas                               |
-| Business Activity Code           | 63111000                                       |
+| Name                              | DATA SCIENCE SOLUTIONS SINGLE MEMBER P.C.      |
+|-----------------------------------|------------------------------------------------|
+| Address                           | Kleitou 17, 54642, Thessaloniki                |
+| Tax ID                            | 802429778                                      |
+| Tax Office                        | Kalamarias                                     |
+| General Commercial Register ID    | 176203504000                                   |
+| Prof. Chamber of Thessaloniki ID  | 70415                                          |
+| Administrator                     | Georgios Traskas                               |
+| Business Activity Code            | 63111000                                       |
 
 ---
 
-| Επωνυμία                         | DATA SCIENCE SOLUTIONS ΜΟΝΟΠΡΟΣΩΠΗ Ι.Κ.Ε.      |
-|----------------------------------|------------------------------------------------|
-| Διεύθυνση                        | Κλείτου 17, 54642, Θεσσαλονίκη                 |
-| Α.Φ.Μ.                           | 802429778                                      |
-| Δ.Ο.Υ.                           | Καλαμαριάς                                     |
-| Αριθμός Γ.Ε.ΜΗ.                  | 176203504000                                   |
-| Αρ. Μητρ. Επαγ. Επιμελητηρίου    | 70415                                          |
-| Διαχειριστής                     | Γεώργιος Τράσκας του Ιωάννη                    |
-| Κ.Α.Δ.                           | 63111000                                       |
+| Επωνυμία                          | DATA SCIENCE SOLUTIONS ΜΟΝΟΠΡΟΣΩΠΗ Ι.Κ.Ε.      |
+|-----------------------------------|------------------------------------------------|
+| Διεύθυνση                         | Κλείτου 17, 54642, Θεσσαλονίκη                 |
+| Α.Φ.Μ.                            | 802429778                                      |
+| Δ.Ο.Υ.                            | Καλαμαριάς                                     |
+| Αριθμός Γ.Ε.ΜΗ.                   | 176203504000                                   |
+| Αρ. Μητρ. Επαγ. Επιμελητηρίου     | 70415                                          |
+| Διαχειριστής                      | Γεώργιος Τράσκας του Ιωάννη                    |
+| Κ.Α.Δ.                            | 63111000                                       |
 
 ### Introduction
 
