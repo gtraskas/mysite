@@ -7,35 +7,27 @@ date: 2024-03-20
 
 ### Company Details
 
-|Name                             |DATA SCIENCE SOLUTIONS SINGLE MEMBER P.C.       |
-|---------------------------------|------------------------------------------------|
-|Address                          |Kleitou 17, 54642, Thessaloniki                 |
-|Tax ID                           |802429778                                       |
-|Tax Office                       |Kalamarias                                      |
-|General Commercial Register ID   |176203504000                                    |
-|Prof. Chamber of Thessaloniki ID |70415                                           |
-|Administrator                    |Georgios Traskas                                |
-|Partners                         |Georgios Traskas                                |
-|Business Activity Codes          |63111000, 63111300, 63111101, 63111102, 63111104|
-|Capital                          |€500                                            |
-|Tel.                             |+30 6934 69 44 57                               |
-|Email                            |<georgiost77@gmail.com>                         |
+| Name                             | DATA SCIENCE SOLUTIONS SINGLE MEMBER P.C.      |
+|----------------------------------|------------------------------------------------|
+| Address                          | Kleitou 17, 54642, Thessaloniki                |
+| Tax ID                           | 802429778                                      |
+| Tax Office                       | Kalamarias                                     |
+| General Commercial Register ID   | 176203504000                                   |
+| Prof. Chamber of Thessaloniki ID | 70415                                          |
+| Administrator                    | Georgios Traskas                               |
+| Business Activity Code           | 63111000                                       |
 
 ---
 
-|Επωνυμία                         |DATA SCIENCE SOLUTIONS ΜΟΝΟΠΡΟΣΩΠΗ Ι.Κ.Ε.       |
-|---------------------------------|------------------------------------------------|
-|Διεύθυνση                        |Κλείτου 17, 54642, Θεσσαλονίκη                  |
-|Α.Φ.Μ.                           |802429778                                       |
-|Δ.Ο.Υ.                           |Καλαμαριάς                                      |
-|Αριθμός Γ.Ε.ΜΗ.                  |176203504000                                    |
-|Αρ. Μητρ. Επαγ. Επιμελητηρίου    |70415                                           |
-|Διαχειριστής                     |Γεώργιος Τράσκας του Ιωάννη                     |
-|Εταίροι                          |Γεώργιος Τράσκας του Ιωάννη                     |
-|Κ.Α.Δ.                           |63111000, 63111300, 63111101, 63111102, 63111104|
-|Κεφάλαιο                         |€500                                            |
-|Τηλ.                             |+30 6934 69 44 57                               |
-|Email                            |<georgiost77@gmail.com>                         |
+| Επωνυμία                         | DATA SCIENCE SOLUTIONS ΜΟΝΟΠΡΟΣΩΠΗ Ι.Κ.Ε.      |
+|----------------------------------|------------------------------------------------|
+| Διεύθυνση                        | Κλείτου 17, 54642, Θεσσαλονίκη                 |
+| Α.Φ.Μ.                           | 802429778                                      |
+| Δ.Ο.Υ.                           | Καλαμαριάς                                     |
+| Αριθμός Γ.Ε.ΜΗ.                  | 176203504000                                   |
+| Αρ. Μητρ. Επαγ. Επιμελητηρίου    | 70415                                          |
+| Διαχειριστής                     | Γεώργιος Τράσκας του Ιωάννη                    |
+| Κ.Α.Δ.                           | 63111000                                       |
 
 ### Introduction
 
@@ -63,13 +55,13 @@ Give me a call for a free intro! We will work together to create the best strate
 * **Visualizing Data:** Use state-of-the-art visualization tools to turn your data into visually captivating narrative.
 * **Machine Learning:** Do you want to develop models to identify hidden patterns in data or make predictions? I utilize cutting-edge methods to build reliable and accurate ML models.
 
-### Why Do My Customers Love Me?
+### Why do my clients think so highly of me?
 
 I pay attention and don't squander their cash!
 
 _“Georgios was instrumental in helping us determine feasibility of our project. He was genuinely engaged and took the time to understand our application and use case. Gave thoughtful and poignant feedback throughout the process. Looking forward to working with him again.”_ (Manager in a US-based Food and Beverage Manufacturing Company with 5K-10K employees)
 
-### Technical Capabilities
+### Technical capabilities
 
 I can contribute a plethora of knowledge to your project from my years of experience in data science. Here's a representative sample:
 
@@ -82,7 +74,7 @@ I can contribute a plethora of knowledge to your project from my years of experi
 * **Cloud Services:** AWS (S3, IAM, RDS, DynamoDB, Data Pipeline, Lambda, SageMaker, API), Google Cloud Platform (Storage, Bigquery, Compute Engine, etc.), Microsoft Azure (Storage, HDInsight, Spark, Pipelines)
 * **Git Version Control:** GitHub, Bitbucket, GitLab
 
-### Why Should You Put Your Trust in and Choose Me?
+### Why should you put your trust in and choose me?
 
 * **Tailored Solutions:** Each project is special. I customize my services to fit your unique requirements and objectives.
 * **On-time Delivery:** I understand how essential deadlines are, thus I promise to accomplish your job on time.
