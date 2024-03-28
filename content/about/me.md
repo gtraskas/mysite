@@ -5,71 +5,92 @@ date: 2024-03-20
 # draft: false
 ---
 
-### Στοιχεία Μονοπρόσωπης Ι.Κ.Ε. / Company Details
+### Company Details
 
-* Επωνυμία / Name: **DATA SCIENCE SOLUTIONS ΜΟΝΟΠΡΟΣΩΠΗ Ι.Κ.Ε.** / **DATA SCIENCE SOLUTIONS SINGLE MEMBER P.C.**
-* Διεύθυνση / Address: Κλείτου 17, 54642, Θεσσαλονίκη / Kleitou 17, 54642, Thessaloniki
-* Α.Φ.Μ. / Tax Identification Number: 802429778
-* Δ.Ο.Υ. / Tax Office: Καλαμαριάς / Kalamarias
-* Αριθμός Γ.Ε.ΜΗ. / General Commercial Register (G.E.MI.) Number: 176203504000
-* Αριθμός Μητρώου Επαγγελματικού Επιμελητηρίου Θεσσαλονίκης / Professional Chamber of Thessaloniki ID: 70415
-* Διαχειριστής / Administrator: Γεώργιος Τράσκας του Ιωάννη / Georgios Traskas
-* Εταίροι / Partners: Γεώργιος Τράσκας του Ιωάννη / Georgios Traskas
-* Κωδικός Αριθμός Δραστηριότητας (ΚΑΔ) / Business Activity Code: 63111000, 63111300, 63111101, 63111102, 63111104
-* Κεφάλαιο / Capital: € 500
-* Τηλ. / Tel.: +30 6934 69 44 57
-* Email: georgiost77@gmail.com
+|Name                            |DATA SCIENCE SOLUTIONS SINGLE MEMBER P.C.       |
+|--------------------------------|------------------------------------------------|
+|Address                         |Kleitou 17, 54642, Thessaloniki                 |
+|Tax ID                          |802429778                                       |
+|Tax Office                      |Kalamarias                                      |
+|General Commercial Register ID  |176203504000                                    |
+|Prof. Chamber of Thessaloniki ID|70415                                           |
+|Administrator                   |Georgios Traskas                                |
+|Partners                        |Georgios Traskas                                |
+|Business Activity Codes         |63111000, 63111300, 63111101, 63111102, 63111104|
+|Capital                         |€500                                            |
+|Tel.                            |+30 6934 69 44 57                               |
+|Email                           |<georgiost77@gmail.com>                         |
+
+---
+
+|Επωνυμία                        |DATA SCIENCE SOLUTIONS ΜΟΝΟΠΡΟΣΩΠΗ Ι.Κ.Ε.       |
+|--------------------------------|------------------------------------------------|
+|Διεύθυνση                       |Κλείτου 17, 54642, Θεσσαλονίκη                  |
+|Α.Φ.Μ.                          |802429778                                       |
+|Δ.Ο.Υ.                          |Καλαμαριάς                                      |
+|Αριθμός Γ.Ε.ΜΗ.                 |176203504000                                    |
+|Αρ. Μητρ. Επαγ. Επιμελητηρίου   |70415                                           |
+|Διαχειριστής                    |Γεώργιος Τράσκας του Ιωάννη                     |
+|Εταίροι                         |Γεώργιος Τράσκας του Ιωάννη                     |
+|Κ.Α.Δ.                          |63111000, 63111300, 63111101, 63111102, 63111104|
+|Κεφάλαιο                        |€500                                            |
+|Τηλ.                            |+30 6934 69 44 57                               |
+|Email                           |<georgiost77@gmail.com>                         |
 
 ### Introduction
 
-Greetings! I’m George, hailing from Greece. My educational journey led me to [Aristotle University of Thessaloniki](https://www.auth.gr/en), where I obtained a Bachelor’s degree in Chemistry and a Master’s degree in Chemical Technology. During my MSc studies and subsequent years, I actively participated in various water treatment research projects. With a solid foundation in analytical chemistry, I’ve dedicated the past 17 years to working at [CPERI/CERTH](http://www.cperi.certh.gr/index.php?lang=en).
+Greetings!
 
-Over the past five years, I’ve been actively involved in data science projects, emphasizing the significance of statistics and data analysis in the field of chemistry. My website showcases a collection of my work, spanning machine learning, data wrangling, exploratory data analysis, and statistical exploration.
+I’m George, hailing from Greece. My educational journey led me to [Aristotle University of Thessaloniki](https://www.auth.gr/en), where I obtained a Bachelor’s degree in Chemistry and a Master’s degree in Chemical Technology. Throughout my studies and subsequent years, I actively participated in various research projects. With a strong foundation in analytical chemistry, I have dedicated over 15 years to working at [CPERI/CERTH](http://www.cperi.certh.gr/index.php?lang=en).
 
-### My Skills
+Over the past six years, I have been deeply engaged in data science projects, emphasizing the importance of statistics and data analysis across various domains. My website showcases a diverse collection of my work, spanning machine learning, data wrangling, exploratory data analysis, and statistical exploration.
 
-* Machine Learning - Regressions, SVM's, Decision Trees, Naive Bayes, Clustering, Neural Networks
-* Cross Validation and Model Evaluation
-* Learning Curves and Error Analysis
-* Feature Scaling and Normalization
-* Feature Selection and Dimensionality Reduction (PCA)
-* Statistics - Descriptive, Inferential, Hypothesis Testing, Q-Tests, T-Tests
-* Data Mining/Wrangling - xls, csv, html, json, xml, SQL
-* Data Analysis - Univariate, Multivariate, Correlations, Visualizations
+### Why to hire me?
 
-### My Toolbox
+Are you looking to use the power of data to enhance your creative strategies?
 
-* Python
-* Scikit-Learn
-* NumPy
-* Pandas
-* Matplotlib
-* Jupyter Notebooks
-* R
-* SQL
-* Tableau
-* LaTeX
+Among the **top 3%** of performers on Upwork, I provide data science and consulting services. My clients include investment firms, medical and healthcare groups, energy companies, and more.
 
+I have provided quality data science solutions and consulting services to over 85 clients.
 
+Give me a call for a free intro! We will work together to create the best strategy for integrating data-driven products into the operations of your business.
 
-### Ask me
+### Services I provide
 
-#### Describe a time you experienced a challenge while building a product/project and how you overcame it.
+* **Scraping Data:** Do you require data for a project? I'm great at using web scraping to collect the data you need.
+* **Wrangling Data:** Do you have untidy data from various sources? My area of expertise is to merge, organize, clean, transform, and enrich your data into valuable datasets for downstream analysis purposes.
+* **Analyzing Data:** Are you unsure of how you can utilize your data for meaningful insights? I'll conduct an in depth study and deliver insightful guidance.
+* **Visualizing Data:** Use state-of-the-art visualization tools to turn your data into visually captivating narrative.
+* **Machine Learning:** Do you want to develop models to identify hidden patterns in data or make predictions? I utilize cutting-edge methods to build reliable and accurate ML models.
 
-Recently, I was faced with creating a bunch of quality control charts (QCC) required by an external ISO 9001 audit. I had several hundreds of observations for 57 features. I quickly found that this was a lot of work to do it manually in Excel or similar software, so I searched for tools that could do this work automatically. I found that R has a library for quality control charting called "qcc". Installing R and the required packages in my working machine was a matter of a few minutes. Then, I read my exported "csv" data into a data frame. Eventually, iterating my list of data with a "for-loop", I created in a few seconds a comprehensive "html" report with statistical summaries and informative control charts.
+### Why Do My Customers Love Me?
 
-#### What big-data problem would you solve that can benefit society at a large scale?
+I pay attention and don't squander their cash!
 
-I constantly watch the rapid increasing volume of analytical and biomedical data in chemistry and life sciences, which requires the development of new methods and approaches for their handling. One of the biggest challenges is the analysis of chemical/biological data from millions of compounds for further clinical prediction purposes applying machine learning methods. After finishing my Data Analyst Nanodegree in Udacity, I started working on a new project about breast cancer prediction using a free dataset from Kaggle. You can find my completed project in the Posts section.
+_“Georgios was instrumental in helping us determine feasibility of our project. He was genuinely engaged and took the time to understand our application and use case. Gave thoughtful and poignant feedback throughout the process. Looking forward to working with him again.”_ (Manager in a US-based Food and Beverage Manufacturing Company with 5K-10K employees)
 
-#### How do you see data science and machine learning affect the way we design software?
+### Technical Capabilities
 
-I believe that one of the benefits of data science and machine learning is the efficient analysis of massive amounts of data and the accurate predictions on them. I consider that it is easier now for software engineers to create applications crafted to our personal needs, since software can handle more data inputs and outputs and can learn in real time our preferences providing a better experience for the user. For example, a "smart" home application could provide conveniences such as energy efficiency and comfort with minimal supervision.
+I can contribute a plethora of knowledge to your project from my years of experience in data science. Here's a representative sample:
 
-#### What is the most interesting fact or trend you've learned from analyzing data?
+* **Programming:** Python, R, SQL
+* **Statistics:** Probability distributions, over and under-sampling, inferential statistics, dimensionality reduction
+* **Data Wrangling:** Python Numpy, Pandas, Sklearn
+* **Data Visualizations:** Matplotlib, Seaborn, interactive charts with Plotly / Dash or Bokeh, Tableau, Metabase
+* **Database Management:** MySQL, MongoDB
+* **Machine / Deep Learning:** Regression, Classification, Prediction, Forecasting, Recognition, NLP using SciPy, Sklearn, TensorFlow and numerous other advanced Python frameworks.
+* **Cloud Services:** AWS (S3, IAM, RDS, DynamoDB, Data Pipeline, Lambda, SageMaker, API), Google Cloud Platform (Storage, Bigquery, Compute Engine, etc.), Microsoft Azure (Storage, HDInsight, Spark, Pipelines)
+* **Git Version Control:** GitHub, Bitbucket, GitLab
 
-One thing that I've found really interesting is the "magic" when you reveal hidden structures and patterns from unlabelled data in the unsupervised machine learning classifications. The conventional data analysis is to implement manually every step from preprocessing to visualising and analysing. With new advanced analytics and machine learning, this process is now more automated and helps you reveal relationships that otherwise would be impossible. For example in medicinal chemistry, a computational tool called Quantitative Structure-Activity Relationship, uses machine learning algorithms and validation methods to find mathematical relationships between the observed physicochemical properties and the chemical structure of a compound.
+### Why Should You Put Your Trust in and Choose Me?
 
-### Contact me
+* **Tailored Solutions:** Each project is special. I customize my services to fit your unique requirements and objectives.
+* **On-time Delivery:** I understand how essential deadlines are, thus I promise to accomplish your job on time.
 
-I am always keen on data science and related topics. Feel free to drop me an email or contact me via LinkedIn, if you are interested in working in the same topics.
+My clients will tell you that I help them achieve fantastic achievements!
+
+_“George is great. He is prompt, extremely competent, gets it right very quickly, and does a very very high quality job. He was great to work with and would recommend him and his work without hesitation. A great find.”_ (Founder and CEO of a healthcare firm with 100-150 workers located in Houston, Texas)
+
+_“Georgios will give you the best solution to your job!! He is a well-trained, very communicative freelancer and he doesn't just do the job but also offers great ways to improve all the time. He makes comprehensive study before starting to code in order to make sure you get exactly what you need. Great experience!!”_ (CPO in an Israel-based company with 100-150 employees).
+
+Are you eager to advance your data-driven project? Have a discussion with me about how I can support you in reaching your objectives!
